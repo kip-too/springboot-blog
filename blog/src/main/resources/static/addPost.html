@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Blog</title>
+</head>
+<body>
+    <h1>Welcome to Spring Blog</h1>
+    <form th:object="${post}" th:action="@{/posts}" method="post">
+        <div>
+            <label for="title">Title</label>
+            <input id="title" th:field="${post.title}" type="text" />
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <input id="description" th:field="${post.description}" type="text" />
+        </div>
+        <div>
+            <label for="body">Body:</label>
+            <textarea id="body" th:field="${post.body}" type="text" ></textarea>
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+        <div>
+            <a href="/posts/add">Write new Blog post</a>
+        </div>
+    </form>
+</body>
+</html>
